@@ -35,7 +35,7 @@ items.forEach(item =>{
 To animate different properties at the same time use ```animate()``` 
 
 ```javascript
-const element = new El('#item');
+const item = new El('#item');
 
 item.animate({
     'color': '#fff',
