@@ -2,7 +2,6 @@
 class El{
 
     constructor(selector){
-        //console.log(selector);
         if(typeof selector === 'object'){
             this.selector = null;
             this.element = selector;
@@ -110,6 +109,35 @@ class El{
             this.element.style.transitionProperty = keys[i] + ' !important';
             this.element.style.transitionDuration = (time/1000) + 's';
         }
+    }
+
+    css(properties){
+        if(typeof properties === 'object'){
+            const keys = Object.keys(properties);
+            const values = Object.values(properties);
+
+            for(let i=0; i<keys.length; i++){
+                this.element.style[keys[i]] = values[i];
+            }
+
+            return this;
+        }
+    }
+
+    collapse(){
+        this.element.style['overflow-y'] = 'hidden';
+        this.element.style.height = 0;
+        return this;
+    }
+
+    expand(){
+        this.element.style['overflow-y'] = 'hidden';
+        this.element.style.height = this.height;
+        return this;
+    }
+
+    parent(){
+
     }
 
 
